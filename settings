@@ -1,0 +1,78 @@
+#############################################################################
+###-------  Followings are requirements to run 2nd day exercises   -------###
+#############################################################################
+
+# Install virtualenv on local pc
+sudo apt install virtualenv
+
+# Install python3 in a directory named multicamp
+virtualenv -p python3 ~/multicamp
+
+# Activate "multicamp" virtualenv
+source multicamp/bin/activate
+
+# Install tensorflow, matplotlib, ipykernel, jupyter on the current virtualenv
+pip3 install --upgrade tensorflow matplotlib ipykernel jupyter
+
+# Add python3 kernel to Jupyter
+python3 -m ipykernel install --user
+
+# Download lecture materials in a directory named ~/Download
+cd Download
+git clone https://github.com/aidentify/lecture
+
+# Run jupyternotebook server on local pc 
+cd lecture
+jupyter notebook
+
+#-----------------------------------------------------#
+# [Ref] Deactivate current virtualenv ("multicamp")
+# On terminal, run "deactivate"
+#-----------------------------------------------------#
+
+
+#-----------------------------------------------------------------------------------------------#
+# [Ref] When got dpkg error
+#
+# Problem) When installing packages with apt, got message like :
+# E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+# E: Unable to lock the administration directory (/var/lib/dpkg), is another process using it?
+# E: Could not get lock /var/lib/apt/lists/lock - open (11: Resource temporarily unavailable)
+# E: Unable to lock directory /var/lib/apt/lists/ 
+# 
+# Solution)
+# 1. Find pid of apt processes
+#   ps -A | grep apt
+# 2. Kill apt processes by pid
+#   sudo kill -9 "processnumber(pid number from 1.)"
+# 3. Delete the lock files
+#   sudo rm /var/lib/dpkg/lock
+# 4. Reconfigure packages
+#   sudo dpkg --configure -a
+# 5. update packages
+#   sudo apt update
+#-----------------------------------------------------------------------------------------------#
+
+#############################################################################
+###-------  Followings are requirements to run 3th day exercises   -------###
+#############################################################################
+# Install keras
+pip3 install keras
+
+# Install music21
+pip3 install music21
+
+# Install OpenAI lib.
+pip3 install gym
+pip3 install readchar
+sudo apt-get install python3-tk
+
+#-----------------------------------------------------#
+# [Ref] Midi 재생
+# https://onlinesequencer.net/import
+#-----------------------------------------------------#
+
+#----------------------------------------------------------------#
+# [Ref] Gridworld 실습 (Andrej Karpathy) 
+# https://cs.stanford.edu/people/karpathy/reinforcejs/index.html
+#----------------------------------------------------------------#
