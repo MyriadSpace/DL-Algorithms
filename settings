@@ -56,15 +56,12 @@ jupyter notebook
 #############################################################################
 ###-------  Followings are requirements to run 3th day exercises   -------###
 #############################################################################
-# Install keras
-pip3 install keras
 
 # Install music21
 pip3 install music21
 
 # Install OpenAI lib.
 pip3 install gym
-pip3 install readchar
 sudo apt-get install python3-tk
 
 #-----------------------------------------------------#

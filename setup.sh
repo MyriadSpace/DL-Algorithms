@@ -9,7 +9,7 @@ virtualenv -p python3 ~/multicamp
 sh "$HOME/multicamp/bin/activate"
 
 # Install tensorflow, matplotlib, ipykernel, jupyter keras music21 gym readchar on the current virtualenv
-$HOME/multicamp/bin/pip3 install --upgrade tensorflow matplotlib ipykernel jupyter keras music21 gym readchar
+$HOME/multicamp/bin/pip3 install --upgrade tensorflow matplotlib ipykernel jupyter music21 gym
 
 # Add python3 kernel to Jupyter
 $HOME/multicamp/bin/python3 -m ipykernel install --user
