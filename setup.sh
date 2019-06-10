@@ -1,6 +1,6 @@
 # !/usr/bin/env bash
 # Install virtualenv on local pc
-echo passwd | sudo -S -u user apt-get install virtualenv
+echo passwd | sudo -S -u user apt install virtualenv
 
 # Install python3 in a directory named multicamp
 virtualenv -p python3 ~/multicamp
