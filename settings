@@ -9,7 +9,7 @@ sudo apt install virtualenv
 virtualenv -p python3 ~/multicamp
 
 # Activate "multicamp" virtualenv
-source multicamp/bin/activate
+source ~/multicamp/bin/activate
 
 # Install tensorflow, matplotlib, ipykernel, jupyter on the current virtualenv
 pip3 install --upgrade tensorflow matplotlib ipykernel jupyter
