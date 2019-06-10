@@ -17,7 +17,7 @@ $HOME/multicamp/bin/python3 -m ipykernel install --user
 # Run jupyternotebook server on local pc 
 # cd lecture
 # jupyter notebook
-echo passwd | sudo -S -u multi apt-get install python3-tk
+echo passwd | sudo -S -u user apt-get install python3-tk
 
 #-----------------------------------------------------#
 # [Ref] Deactivate current virtualenv ("multicamp")
