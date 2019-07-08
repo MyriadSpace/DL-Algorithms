@@ -17,8 +17,10 @@ pip3 install --upgrade tensorflow matplotlib ipykernel jupyter
 # Add python3 kernel to Jupyter
 python3 -m ipykernel install --user
 
-# Download lecture materials in a directory named ~/Download
-cd Download
+# Install Git
+sudo apt install git
+
+# Download lecture materials in a directory
 git clone https://github.com/aidentify/lecture
 
 # Run jupyternotebook server on local pc 
