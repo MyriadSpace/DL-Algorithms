@@ -5,11 +5,11 @@ dpkg_cmd_list = [
     'echo "passwd" | sudo -S dpkg --configure -a;',
     'echo "passwd" | sudo -S apt update;'
 ]
-dpkg_cmd = ''.join(dpkg_cmd_list)
-dpkg_proc = subprocess.Popen(dpkg_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
-while dpkg_proc.poll() is None:
-    out = dpkg_proc.stdout.readline()
-    print(out.decode('utf-8'), end='')
+for dpkg_cmd in dpkg_cmd_list:
+    dpkg_proc = subprocess.Popen(dpkg_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+    while dpkg_proc.poll() is None:
+        out = dpkg_proc.stdout.readline()
+        print(out.decode('utf-8'), end='')
 
 install_cmd_list = [
     'echo "passwd" | sudo -S apt -y install virtualenv git python3-tk;',
@@ -18,8 +18,8 @@ install_cmd_list = [
     '/home/user/multicamp/bin/python3 -m ipykernel install --user;',
     'git clone https://github.com/aidentify/lecture;',
 ]
-install_cmd = ''.join(install_cmd_list)
-install_proc = subprocess.Popen(install_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
-while install_proc.poll() is None:
-    out = install_proc.stdout.readline()
-print(out.decode('utf-8'), end='')
+for install_cmd in install_cmd_list:
+    install_proc = subprocess.Popen(install_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+    while install_proc.poll() is None:
+        out = install_proc.stdout.readline()
+    print(out.decode('utf-8'), end='')
