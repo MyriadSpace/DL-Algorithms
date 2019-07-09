@@ -1,9 +1,9 @@
 import subprocess
 
 dpkg_cmd_list = [
-    'echo "passwd" | sudo -S rm /var/lib/dpkg/lock;',
-    'echo "passwd" | sudo -S dpkg --configure -a;',
-    'echo "passwd" | sudo -S apt update;'
+    'echo "passwd" | sudo -S rm /var/lib/dpkg/lock',
+    'echo "passwd" | sudo -S dpkg --configure -a',
+    'echo "passwd" | sudo -S apt update'
 ]
 for dpkg_cmd in dpkg_cmd_list:
     dpkg_proc = subprocess.Popen(dpkg_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
@@ -12,11 +12,11 @@ for dpkg_cmd in dpkg_cmd_list:
         print(out.decode('utf-8'), end='')
 
 install_cmd_list = [
-    'echo "passwd" | sudo -S apt -y install virtualenv git python3-tk;',
-    'virtualenv -p python3 /home/user/multicamp;',
-    '/home/user/multicamp/bin/pip3 install --upgrade tensorflow matplotlib ipykernel jupyter music21 gym;',
-    '/home/user/multicamp/bin/python3 -m ipykernel install --user;',
-    'git clone https://github.com/aidentify/lecture;',
+    'echo "passwd" | sudo -S apt -y install virtualenv git python3-tk',
+    'virtualenv -p python3 /home/user/multicamp',
+    '/home/user/multicamp/bin/pip3 install --upgrade tensorflow matplotlib ipykernel jupyter music21 gym',
+    '/home/user/multicamp/bin/python3 -m ipykernel install --user',
+    'git clone https://github.com/aidentify/lecture',
 ]
 for install_cmd in install_cmd_list:
     install_proc = subprocess.Popen(install_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
