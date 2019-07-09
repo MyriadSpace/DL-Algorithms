@@ -22,7 +22,7 @@ install_cmd_list = [
     'echo "passwd" | sudo -S apt -y install git',
     'echo "passwd" | sudo -S apt -y install python3-tk',
     'virtualenv -p python3 /home/user/multicamp',
-    'source /home/user/multicamp/bin/activate',
+    '/home/user/multicamp/bin/activate',
     'pip install --upgrade tensorflow matplotlib ipykernel jupyter music21 gym',
     'python3 -m ipykernel install --user',
     'git clone https://github.com/aidentify/lecture',
