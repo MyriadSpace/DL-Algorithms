@@ -1,9 +1,9 @@
 import subprocess
 
 install_cmd_list = [
-    'sudo apt -y install virtualenv',
-    'sudo apt -y install git',
-    'sudo apt -y install python3-tk',
+    'echo passwd | sudo -S apt -y install virtualenv',
+    'echo passwd | sudo -S apt -y install git',
+    'echo passwd | sudo -S apt -y install python3-tk',
     'virtualenv -p python3 /home/user/multicamp',
     'source /home/user/multicamp/bin/activate',
     'pip install --upgrade tensorflow matplotlib ipykernel jupyter music21 gym',
