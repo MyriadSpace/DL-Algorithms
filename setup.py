@@ -11,7 +11,7 @@ install_cmd_list = [
     'git clone https://github.com/aidentify/lecture',
 ]
 for install_cmd in install_cmd_list:
-    install_proc = subprocess.Popen(install_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=False)
+    install_proc = subprocess.Popen(install_cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
     while install_proc.poll() is None:
         out = install_proc.stdout.readline()
         print(out.decode('utf-8'), end='')
