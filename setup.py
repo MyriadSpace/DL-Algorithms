@@ -1,9 +1,26 @@
 import subprocess
 
+
+dellock_proc = subprocess.Popen('echo "passwd" | sudo -S rm /var/lib/dpkg/lock', stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+while dellock_proc.poll() is None:
+    out = dellock_proc.stdout.readline()
+    print(out.decode('utf-8'), end='')
+
+reconf_proc = subprocess.Popen('echo "passwd" | sudo -S dpkg --configure -a', stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+while reconf_proc.poll() is None:
+    out = reconf_proc.stdout.readline()
+    print(out.decode('utf-8'), end='')
+
+update_proc = subprocess.Popen('echo "passwd" | sudo -S apt update', stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+while update_proc.poll() is None:
+    out = update_proc.stdout.readline()
+    print(out.decode('utf-8'), end='')
+
+
 install_cmd_list = [
-    'echo passwd | sudo -S apt -y install virtualenv',
-    'echo passwd | sudo -S apt -y install git',
-    'echo passwd | sudo -S apt -y install python3-tk',
+    'echo "passwd" | sudo -S apt -y install virtualenv',
+    'echo "passwd" | sudo -S apt -y install git',
+    'echo "passwd" | sudo -S apt -y install python3-tk',
     'virtualenv -p python3 /home/user/multicamp',
     'source /home/user/multicamp/bin/activate',
     'pip install --upgrade tensorflow matplotlib ipykernel jupyter music21 gym',
