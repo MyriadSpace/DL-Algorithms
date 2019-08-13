@@ -1,9 +1,6 @@
 import subprocess
 
 install_cmd_list = [
-    'echo "passwd" | sudo -S rm /var/lib/dpkg/lock',
-    'echo "passwd" | sudo -S dpkg --configure -a',
-    'echo "passwd" | sudo -S apt update',
     'echo "passwd" | sudo -S apt -y install virtualenv git python3-tk',
     'virtualenv -p python3 /home/user/multicamp',
     '/home/user/multicamp/bin/pip3 install --upgrade tensorflow matplotlib ipykernel jupyter music21 gym',
